@@ -1,0 +1,7 @@
+{
+  "name": "dataGraf",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
