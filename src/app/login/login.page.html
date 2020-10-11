@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center >Inicio De Session </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña</ion-label>
+      <ion-input formControlName="password"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
