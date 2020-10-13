@@ -1,10 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      APP Ionic
+      Valor Dolar
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <canvas style="width: 300px;" id="chart"></canvas>
 
+  <ion-list>
+    <ion-list-header>Valor del Dolar Mes Actual</ion-list-header>
+    <ion-item *ngFor="let item of dataBrute">
+      <ion-label>
+       Fecha: {{item.Fecha}}
+      </ion-label>
+      <ion-label>
+        Valor: {{item.Valor}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

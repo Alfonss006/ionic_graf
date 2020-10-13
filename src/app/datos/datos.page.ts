@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { NotasService } from '../services/notas.service';
 import { UserService } from '../services/user.service';
@@ -23,7 +24,8 @@ export class DatosPage implements OnInit {
               private formBuilder: FormBuilder,
               private storage: Storage,
               private _notas : NotasService,
-              private _user: UserService) { }
+              private _user: UserService,
+              private _router: Router) { }
 
   ngOnInit() {
 
@@ -37,8 +39,15 @@ export class DatosPage implements OnInit {
   }
 
   async setNota(){
+    if(this.notaForm.valid){
     const uid = await this.storage.get('userid')
     this.afDB.database.ref(uid+ "/nota/"+ Date.now() ).set(this.notaForm.value);
     this.notaForm.setValue({titulo: "", desc: ""})
+    }
+  }
+
+  
+  goDolar(){
+    this._router.navigateByUrl('/home')
   }
 }
