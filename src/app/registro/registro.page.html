@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title text-center >Inicio De Session </ion-title>
+    <ion-title>registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="loginForm">
+<ion-content padding>
+  <form [formGroup]="registroForm">
     <ion-item>
       <ion-label>Email</ion-label>
       <ion-input formControlName="email"></ion-input>
@@ -14,11 +14,6 @@
       <ion-label>Contraseña</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
-  </form>
-  <ion-button (click)="login()" expand="block">Entrar</ion-button>  
-  <br>
-  <div>
-    <ion-button (click)="registro()" expand="block">Registrarse</ion-button>  
-  </div>
-  
+  </form>  
+  <ion-button expand="block"(click)="creaCuenta()">Crear</ion-button>
 </ion-content>
